@@ -24,7 +24,7 @@ export default function Page() {
             <label htmlFor="name">Nom</label>
             <Input type="text" name="author_name" placeholder="Nom"/>
             <label htmlFor="message">Missatge</label>
-            <Textarea name="message" placeholder="Escriu el teu missatg d'ajuda"/>
+            <Textarea name="message" placeholder="Escriu el teu missatge d'ajuda"/>
             <p className="p-4">
                 Recuerda dejar información de contacto, ubicación y cualquier otra información relevante.
             </p>

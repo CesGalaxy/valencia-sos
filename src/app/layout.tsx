@@ -40,6 +40,9 @@ export default function RootLayout({
             </nav>
         </header>
         {children}
+        <footer className="text-center text-gray-500 border-t border-t-gray-200 pt-4">
+            Si vols afegir més informació: <Link href="/contacte" className="underline">contacta&#39;m</Link>
+        </footer>
         </body>
         </html>
     );
