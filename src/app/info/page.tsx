@@ -2,6 +2,13 @@ import Link from "next/link";
 import { IconLink } from "@tabler/icons-react";
 import React from "react";
 
+const EMAILS = [
+    "dana_educació@gva.es",
+    "dana_cultura@gva.es",
+    "dana_universitats@gva.es",
+    "dana_ocupacio@gva.es",
+]
+
 export default function Home() {
     return <main className="grid lg:grid-cols-2 gap-4 p-4 *:bg-slate-100 *:p-4">
         <section>
@@ -13,6 +20,14 @@ export default function Home() {
             <ExtLink href="https://cac.es/noticia/centrovoluntariado-museuciencies/">
                 Centre de Voluntariat de la CAC
             </ExtLink>
+        </section>
+        <section>
+            <h2 className="text-3xl font-bold flex items-center gap-2 mb-2">Contactes (email)</h2>
+            <ul className="gap-2 flex flex-col">
+                {EMAILS.map((email) => <li key={email}>
+                    <ExtLink href={`mailto:${email}`}>{email}</ExtLink>
+                </li>)}
+            </ul>
         </section>
     </main>;
 }
