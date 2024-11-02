@@ -1,24 +1,29 @@
 import Link from "next/link";
-
-const IG_OFFICIAL = [
-    "https://www.instagram.com/generalitatvalenciana/",
-    "https://www.instagram.com/apunt_media/",
-    "https://www.instagram.com/bombersvalencia/",
-    "https://www.instagram.com/diputaciodevalencia/",
-    "https://www.instagram.com/lesartsvalencia/",
-    "https://www.instagram.com/emtvalencia/",
-]
+import { IconLink } from "@tabler/icons-react";
+import React from "react";
 
 export default function Home() {
-    return <main>
-        <p>Help</p>
+    return <main className="grid lg:grid-cols-2 gap-4 p-4 *:bg-slate-100 *:p-4">
         <section>
-            <h2>Instagram Oficial</h2>
-            <ul>
-                {IG_OFFICIAL.map((instagram) => <li key={instagram}>
-                    <Link href={instagram}>{instagram.replace("https://www.instagram.com/", "")}</Link>
-                </li>)}
-            </ul>
+            <h2 className="text-3xl font-bold flex items-center gap-2 mb-2">Medi de comunicació</h2>
+            <ExtLink href="https://www.apuntmedia.es/">Pàgina web de apunt</ExtLink>
+        </section>
+        <section>
+            <h2 className="text-3xl font-bold flex items-center gap-2 mb-2">Altres</h2>
+            <ExtLink href="https://cac.es/noticia/centrovoluntariado-museuciencies/">
+                Centre de Voluntariat de la CAC
+            </ExtLink>
         </section>
     </main>;
+}
+
+function ExtLink({ children, ...props }: React.ComponentProps<typeof Link>) {
+    return <Link
+        target="_blank"
+        className="flex items-center gap-2 bg-blue-200 px-2 py-1 rounded-full hover:bg-blue-300 hover:underline border-2 border-blue-400"
+        {...props}
+    >
+        <IconLink/>
+        <span>{children}</span>
+    </Link>
 }

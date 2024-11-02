@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IconBrandInstagram } from "@tabler/icons-react";
 
 const IG_OFFICIAL = [
     "https://www.instagram.com/generalitatvalenciana/",
@@ -19,7 +20,10 @@ const IG_OTHERS = [
 export default function Home() {
     return <main className="grid lg:grid-cols-2 gap-4 p-4 *:bg-slate-100 *:p-4">
         <section>
-            <h1 className="text-3xl font-bold">Instagram Oficial</h1>
+            <h1 className="text-3xl font-bold flex items-center gap-2">
+                <IconBrandInstagram size={32}/>
+                Instagram oficial
+            </h1>
             <br/>
             <ul className="gap-2 flex flex-col">
                 {IG_OFFICIAL.map((instagram) => <li key={instagram}>
@@ -28,7 +32,10 @@ export default function Home() {
             </ul>
         </section>
         <section>
-            <h1 className="text-3xl font-bold">Altres comptes</h1>
+            <h1 className="text-3xl font-bold flex items-center gap-2">
+                <IconBrandInstagram size={32}/>
+                Altres comptes
+            </h1>
             <br/>
             <ul className="gap-2 flex flex-col">
                 {IG_OTHERS.map((instagram) => <li key={instagram}>
